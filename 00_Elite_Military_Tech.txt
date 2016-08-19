@@ -1,0 +1,3018 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 240
+@tier1cost2 = 360
+@tier1cost3 = 480
+@tier1cost4 = 600
+
+@tier2cost1 = 900
+@tier2cost2 = 1200
+@tier2cost3 = 1500
+@tier2cost4 = 1800
+
+@tier3cost1 = 2320
+@tier3cost2 = 2840
+@tier3cost3 = 3360
+@tier3cost4 = 15480
+
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+@tier1weight4 = 85
+
+@tier2weight1 = 75
+@tier2weight2 = 70
+@tier2weight3 = 65
+@tier2weight4 = 60
+
+@tier3weight1 = 50
+@tier3weight2 = 45
+@tier3weight3 = 40
+@tier3weight4 = 15
+
+# ##################
+# Elite military_theory
+# ##################
+
+tech_elite_Legion = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		navy_size_mult = 0.65
+		navy_size_add = 15
+		ship_evasion_mult = -0.1
+		ship_fire_rate_mult = -0.3
+		ship_evasion_mult = -0.25
+		ship_armor_add = 25
+		ship_upkeep_mult = -0.20
+		spaceport_ship_build_cost_mult = -0.05
+		country_ship_upgrade_cost_mult = -0.10
+		ship_weapon_damage = 0.5
+		shipsize_battleship_build_cost_mult = -0.4
+		shipsize_battleship_construction_speed_mult = 2
+		shipsize_Dreadnought_build_cost_mult = -0.4
+		shipsize_dreadnought_construction_speed_mult = 2
+		shipsize_flagship_build_cost_mult = -0.3
+		planet_ship_build_speed_mult = 0.3
+		leader_skill_levels = 3
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_pacifist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Imperial_Legion"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_militarist"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Imperial_Legion"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_militarist"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_pacifist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_sovereignty = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Legion" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		navy_size_mult = 0.75
+		shipsize_battleship_build_cost_mult = -0.2
+		shipsize_battleship_construction_speed_mult = 6
+		shipsize_Dreadnought_build_cost_mult = -0.2
+		shipsize_dreadnought_construction_speed_mult = 5
+		shipsize_titan_build_cost_mult = -0.33
+		shipsize_leviathan_build_cost_mult = -0.33
+		shipsize_sun_crusher_build_cost_mult = -0.33
+		shipsize_avatar_build_cost_mult = -0.33
+		shipsize_erebus_build_cost_mult = -0.33
+		ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 0.5
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_pacifist
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_militarist"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_militarist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_pacifist
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.5
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Purge = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		navy_size_mult = -0.25
+		navy_ship_evasion_mult = -0.4
+		ship_armor_add = 65
+		ship_shield_hp_mult = 0.8
+		ship_fire_rate_mult = -0.2
+		ship_weapon_damage = 1
+		ship_upkeep_mult = 0.7
+		ship_speed_mult = 0.3
+		ship_sensor_range_mult = 1.5
+		pop_other_species_happiness = -0.25
+		army_damage_mult = 2.5
+		army_morale = 2.5
+		slave_production_output = 0.5
+		slave_food_output = 0.5
+		influence_gain_add = -1
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_xenophile
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}	
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Great_Purge"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_xenophobe"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_terrestrial_sculpting"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Great_Purge"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophobe"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_xenophile
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_terrestrial_sculpting"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_reapers = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Purge" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		ship_weapon_damage = 1.5
+		slave_production_output = 1
+		ship_hitpoints_mult = 0.3
+		pop_other_species_happiness = -0.5
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_xenophile
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophobe"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_terrestrial_sculpting"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophobe"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_xenophile
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_terrestrial_sculpting"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_3"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_spaceport_4"
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Freelancers = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		ship_evasion_mult = 0.125
+		ship_emergency_ftl_mult = -0.3
+		ship_fire_rate_mult = 4
+		ship_hitpoints_mult = 3
+		navy_size_mult = -0.7
+		ship_weapon_damage = -0.25
+		planet_ship_build_speed_mult = -0.3
+		shipsize_corvette_build_cost_mult = 2
+		shipsize_destroyer_build_cost_mult = 2
+		shipsize_cruiser_build_cost_mult = 2
+		shipsize_battleship_build_cost_mult = 2
+		shipsize_escort_build_cost_mult = 2
+		shipsize_facruiser_build_cost_mult = 2
+		shipsize_battlecruiser_build_cost_mult = 2
+		shipsize_light_carrier_build_cost_mult = 2
+		shipsize_carrier_build_cost_mult = 2
+		shipsize_dreadnought_build_cost_mult = 2
+		shipsize_flagship_build_cost_mult = 1
+		shipsize_titan_build_cost_mult = 1
+		shipsize_leviathan_build_cost_mult = 1
+		shipsize_sun_crusher_build_cost_mult = 1
+		shipsize_avatar_build_cost_mult = 1
+		shipsize_erebus_build_cost_mult = 1
+		shipsize_corvette_construction_speed_mult = -0.5
+		shipsize_destroyer_construction_speed_mult = -0.5
+		shipsize_cruiser_construction_speed_mult = -0.5
+		shipsize_battleship_construction_speed_mult = -0.5
+		shipsize_corvette_upkeep_mult = 1
+		shipsize_destroyer_upkeep_mult = 1
+		shipsize_cruiser_upkeep_mult = 1
+		shipsize_battleship_upkeep_mult = 1
+		shipsize_escort_upkeep_mult = 1
+		shipsize_facruiser_upkeep_mult = 1
+		shipsize_battlecruiser_upkeep_mult = 1
+		shipsize_light_carrier_upkeep_mult = 1
+		shipsize_carrier_upkeep_mult = 1
+		shipsize_dreadnought_upkeep_mult = 1
+		shipsize_titan_upkeep_mult = 1
+		shipsize_leviathan_upkeep_mult = 1
+		shipsize_sun_crusher_upkeep_mult = 1
+		shipsize_avatar_upkeep_mult = 1
+		shipsize_erebus_upkeep_mult = 1
+		shipsize_flagship_upkeep_mult = 1
+		shipsize_military_station_small_upkeep_mult = 1
+		shipsize_military_station_medium_upkeep_mult = 1
+		shipsize_military_station_large_upkeep_mult = 1
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_collectivist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Freelancers"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_individualist"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_frontier_initiatives"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_power_plant_1"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Freelancers"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_Individualist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_collectivist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_frontier_initiatives"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_power_plant_1"
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_free_nations = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Freelancers" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		navy_size_mult = 0.3
+		ship_evasion_mult = 0.1
+		shipsize_corvette_build_cost_mult = -1.75
+		shipsize_destroyer_build_cost_mult = -1.75
+		shipsize_cruiser_build_cost_mult = -1.75
+		shipsize_battleship_build_cost_mult = -1.75
+		shipsize_escort_build_cost_mult = -1.75
+		shipsize_facruiser_build_cost_mult = -1.75
+		shipsize_battlecruiser_build_cost_mult = -1.75
+		shipsize_light_carrier_build_cost_mult = -1.75
+		shipsize_carrier_build_cost_mult = -1.75
+		shipsize_dreadnought_build_cost_mult = -1.75
+		shipsize_flagship_build_cost_mult = -1.5
+		shipsize_titan_build_cost_mult = -1.5
+		shipsize_leviathan_build_cost_mult = -1.5
+		shipsize_sun_crusher_build_cost_mult = -1.5
+		shipsize_avatar_build_cost_mult = -1.5
+		shipsize_erebus_build_cost_mult = -1.5
+		shipsize_corvette_construction_speed_mult = 10
+		shipsize_destroyer_construction_speed_mult = 10
+		shipsize_cruiser_construction_speed_mult = 10
+		shipsize_battleship_construction_speed_mult = 10
+		shipsize_escort_construction_speed_mult = 10
+		shipsize_facruiser_construction_speed_mult = 10
+		shipsize_battlecruiser_construction_speed = 10
+		shipsize_light_carrier_construction_speed_mult = 10
+		shipsize_carrier_construction_speed_mult = 10
+		shipsize_dreadnought_construction_speed_mult = 10
+		shipsize_facruiser_construction_speed_mult = 10
+		shipsize_corvette_upkeep_mult = 1
+		shipsize_destroyer_upkeep_mult = 1
+		shipsize_cruiser_upkeep_mult = 1
+		shipsize_battleship_upkeep_mult = 1
+		shipsize_escort_upkeep_mult = 1
+		shipsize_facruiser_upkeep_mult = 1
+		shipsize_battlecruiser_upkeep_mult = 1
+		shipsize_light_carrier_upkeep_mult = 1
+		shipsize_carrier_upkeep_mult = 1
+		shipsize_dreadnought_upkeep_mult = 1
+		shipsize_military_station_small_upkeep_mult = 1
+		shipsize_military_station_medium_upkeep_mult = 1
+		shipsize_military_station_large_upkeep_mult = 1
+		max_minerals = 10000
+		max_energy = 2000
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_collectivist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_individualist"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_frontier_initiatives"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_power_plant_1"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_individualist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_collectivist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_frontier_initiatives"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_power_plant_1"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+Tech_elite_Rifters = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		navy_size_mult = -0.9
+		ship_armor_add = 25
+		ship_hitpoints_mult = 3.5
+		ship_upkeep_mult = 3
+		planet_ship_build_speed_mult = -0.5
+		influence_gain_add = 1
+		ship_auto_repair_add = 0.075
+		ship_emergency_ftl_mult = -1
+		ship_fire_rate_mult = -0.65
+		ship_weapon_damage = 5
+		shipsize_science_build_cost_mult = -0.8
+		tile_resource_engineering_research_mult = 0.2
+		tile_resource_physics_research_mult = 0.2
+		tile_resource_society_research_mult = 0.2
+		shipsize_corvette_build_cost_mult = 3
+		shipsize_destroyer_build_cost_mult = 3
+		shipsize_cruiser_build_cost_mult = 3
+		shipsize_battleship_build_cost_mult = 3
+		shipsize_escort_build_cost_mult = 3
+		shipsize_facruiser_build_cost_mult = 3
+		shipsize_battlecruiser_build_cost_mult = 3
+		shipsize_light_carrier_build_cost_mult = 3
+		shipsize_carrier_build_cost_mult = 3
+		shipsize_dreadnought_build_cost_mult = 3
+		shipsize_titan_build_cost_mult = 1
+		shipsize_leviathan_build_cost_mult = 1
+		shipsize_sun_crusher_build_cost_mult = 1
+		shipsize_avatar_build_cost_mult = 1
+		shipsize_erebus_build_cost_mult = 1
+		shipsize_flagship_build_cost_mult = 1 #THIS WILL BE OP FOR RIFTWALKERS
+		ship_combat_speed_mult = 2
+		shipsize_corvette_construction_speed_mult = -0.5
+		shipsize_destroyer_construction_speed_mult = -0.5
+		shipsize_cruiser_construction_speed_mult = -0.5
+		shipsize_battleship_construction_speed_mult = -0.5
+		shipsize_facruiser_construction_speed_mult = -0.5
+		shipsize_battlecruiser_construction_speed_mult = -0.5
+		shipsize_light_carrier_construction_speed_mult = -0.5
+		shipsize_carrier_construction_speed_mult = -0.5
+		shipsize_dreadnought_construction_speed_mult = -0.5
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_spiritualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Rift_Walkers"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_materialist"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_2"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Rift_Walkers"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_materialist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_spiritualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_2"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_masters = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "Tech_elite_Rifters" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		navy_size_mult = -0.1
+		ship_evasion_mult = 0.1
+		shipsize_corvette_build_cost_mult = 3
+		shipsize_destroyer_build_cost_mult = 3
+		shipsize_cruiser_build_cost_mult = 3
+		shipsize_battleship_build_cost_mult = 3
+		shipsize_escort_build_cost_mult = 3
+		shipsize_facruiser_build_cost_mult = 3
+		shipsize_battlecruiser_build_cost_mult = 3
+		shipsize_light_carrier_build_cost_mult = 3
+		shipsize_carrier_build_cost_mult = 3
+		shipsize_dreadnought_build_cost_mult = 3
+		shipsize_flagship_build_cost_mult = 1
+		ship_upkeep_mult = -4
+		ship_weapon_damage = 1.5
+		max_minerals = 50000
+		max_energy = 20000
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_spiritualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_materialist"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_2"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_materialist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_spiritualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_physics_lab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_biolab_2"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_1"
+		}
+		modifier = {
+			factor = 1.25
+				has_technology = "tech_engineering_lab_2"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Bastion = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		ship_armor_mult = 1
+		ship_armor_add = 10
+		ship_shield_hp_mult = 2
+		ship_hitpoints_mult = 1
+		ship_upkeep_mult = 0.35
+		navy_size_mult = -0.6
+		ship_auto_repair_add = 0.03
+		ship_weapon_damage = -0.35
+		ship_fire_rate_mult = 0.3
+		shipsize_corvette_build_cost_mult = 1
+		shipsize_destroyer_build_cost_mult = 1
+		shipsize_cruiser_build_cost_mult = 1
+		shipsize_battleship_build_cost_mult = 1
+		shipsize_escort_build_cost_mult = 1
+		shipsize_facruiser_build_cost_mult = 1
+		shipsize_battlecruiser_build_cost_mult = 1
+		shipsize_light_carrier_build_cost_mult = 1
+		shipsize_carrier_build_cost_mult = 1
+		shipsize_dreadnought_build_cost_mult = 1
+		shipsize_titan_build_cost_mult = 1
+		shipsize_leviathan_build_cost_mult = 1
+		shipsize_sun_crusher_build_cost_mult = 1
+		shipsize_avatar_build_cost_mult = 1
+		shipsize_erebus_build_cost_mult = 1
+		shipsize_flagship_build_cost_mult = 1
+		ship_evasion_mult = 0.1
+		shipsize_military_station_small_build_cost_mult = -0.2
+		shipsize_military_station_small_upkeep_mult = -0.95
+		shipsize_military_station_medium_build_cost_mult = -0.2
+		shipsize_military_station_medium_upkeep_mult = -0.95
+		shipsize_military_station_large_build_cost_mult = -0.2
+		shipsize_military_station_large_upkeep_mult = -0.95
+		shipsize_military_station_xlarge_build_cost_mult = -0.20
+		shipsize_military_station_xlarge_upkeep_mult = -0.4
+		shipclass_military_station_damage_mult = 4
+		shipclass_military_station_hit_points_mult = 7
+		pop_fortification_defense = 5
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_militarist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"	
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Empire's_Bastion"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_pacifist"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_1"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_2"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_3"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Empire's_Bastion"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_pacifist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_militarist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_1"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_2"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_3"
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_heroes = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Bastion" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		navy_size_mult = 0.25
+		ship_weapon_damage = 1
+		ship_emergency_ftl_mult = -1
+		ship_fire_rate_mult = 0.5
+		
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_militarist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_pacifist"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_1"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_2"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_3"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_pacifist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_militarist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_1"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_2"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_space_defense_station_3"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Alliance = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		ship_shield_hp_mult = 1
+		ship_armor_mult = 1
+		ship_hitpoints_mult = 1
+		ship_weapon_damage = 1
+		ship_fire_rate_mult = 1
+		ship_upkeep_mult = 1.5
+		ship_auto_repair_add = 0.02
+		shipsize_corvette_build_cost_mult = 2.33
+		shipsize_destroyer_build_cost_mult = 2.33
+		shipsize_cruiser_build_cost_mult = 2.33
+		shipsize_battleship_build_cost_mult = 2.33
+		shipsize_escort_build_cost_mult = 2.33
+		shipsize_facruiser_build_cost_mult = 2.33
+		shipsize_battlecruiser_build_cost_mult = 2.33
+		shipsize_light_carrier_build_cost_mult = 2.33
+		shipsize_carrier_build_cost_mult = 2.33
+		shipsize_dreadnought_build_cost_mult = 2.33
+		shipsize_titan_build_cost_mult = 1
+		shipsize_leviathan_build_cost_mult = 1
+		shipsize_sun_crusher_build_cost_mult = 1
+		shipsize_avatar_build_cost_mult = 1
+		shipsize_erebus_build_cost_mult = 1
+		shipsize_flagship_build_cost_mult = 1
+		ship_emergency_ftl_mult = 0.55
+		influence_gain_add = 6
+		pop_eff_wo_slaves = 0.15
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophobe
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Grand_Alliance"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_xenophile"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_colonization_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_desert_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tropical_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_continental_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_ocean_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arctic_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tundra_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arid_colonization"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Grand_Alliance"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophile"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophobe
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_colonization_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_desert_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tropical_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_continental_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_ocean_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arctic_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tundra_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arid_colonization"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_galactic = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Alliance" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		ship_shield_hp_mult = 0.66
+		ship_armor_mult = 0.66
+		ship_hitpoints_mult = 0.66
+		ship_weapon_damage = 0.66
+		ship_fire_rate_mult = 0.66
+		ship_auto_repair_add = 0.05
+		influence_gain_add = 6
+		max_minerals = 10000
+		max_energy = 5000
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophobe
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophile"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_colonization_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_desert_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tropical_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_continental_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_ocean_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arctic_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tundra_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arid_colonization"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_xenophile"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_xenophobe
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_colonization_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_desert_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tropical_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_continental_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_ocean_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arctic_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_tundra_colonization"
+		}
+		modifier = {
+			factor = 2
+				has_technology = "tech_arid_colonization"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Hive = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		navy_size_mult = 2
+		ship_armor_mult = -0.6
+		ship_hitpoints_mult = -0.7
+		ship_shield_hp_mult = -0.7
+		ship_weapon_damage = -0.25
+		ship_fire_rate_mult = -0.2
+		ship_auto_repair_add = 0.25
+		ship_evasion_mult = 0.1
+		spaceport_ship_build_cost_mult = -0.5
+		planet_ship_build_speed_mult = 4.5
+		slave_production_output = 0.5
+		slave_food_output = 0.4
+		tile_resource_food_mult = 1
+		tile_resource_energy_mult = 0.5
+		tile_resource_minerals_mult = 0.25
+		pop_growth_req_mult = -0.5
+		pop_environment_tolerance = 0.3
+		ship_combat_speed_mult = 3
+		ship_upkeep_mult = -0.4
+		shipsize_corvette_construction_speed_mult = 12
+		shipsize_destroyer_construction_speed_mult = 12
+		shipsize_cruiser_construction_speed_mult = 12
+		shipsize_battleship_construction_speed_mult = 12
+		shipsize_escort_construction_speed_mult = 12
+		shipsize_facruiser_construction_speed_mult = 12
+		shipsize_battlecruiser_construction_speed_mult = 12
+		shipsize_light_carrier_construction_speed_mult = 12
+		shipsize_carrier_construction_speed_mult = 12
+		shipsize_dreadnought_construction_speed_mult = 12
+		shipsize_flagship_build_cost_mult = .7 #Will BE OP For Hive
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_individualist
+						has_ethic = ethic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Hive"
+		}
+		modifier = {
+			factor = 2
+				has_ethic = "ethic_fanatic_collectivist"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_2"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_3"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Hive"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_collectivist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_individualist
+						has_ethic = ethic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_2"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_3"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_collective = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Hive" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		ship_hitpoints_mult = 0.5
+		ship_shield_hp_mult = 0.5
+		ship_weapon_damage = 0.2
+		ship_fire_rate_mult = 0.2
+		ship_auto_repair_add = 0.2
+		ship_evasion_mult = 0.05
+		spaceport_ship_build_cost_mult = -0.2
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_individualist
+						has_ethic = ethic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_collectivist"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_2"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_3"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_collectivist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_individualist
+						has_ethic = ethic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_holy"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_1"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_2"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_3"
+		}
+		modifier = {
+			factor = 2
+				has_technology "tech_doctrine_fleet_size_4"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+tech_elite_Crusaders = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		navy_size_mult = 1
+		ship_armor_mult = 0.25
+		ship_hitpoints_mult = -0.5
+		ship_shield_hp_mult = 4
+		ship_weapon_damage = -0.4
+		ship_fire_rate_mult = 0.6
+		ship_evasion_mult = 0.25
+		pop_happiness = 0.2
+		shipsize_corvette_build_cost_mult = -0.4
+		shipsize_escort_build_cost_mult = -0.4
+		shipsize_corvette_construction_speed_mult = 0.4
+		shipsize_escort_construction_speed_mult = 0.4
+		planet_ship_build_speed_mult = 0.25
+		ship_speed_mult = 3
+		ship_emergency_ftl_mult = 0.66
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_materialist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Holy_Crusade"
+		}
+		modifier = {
+			factor = 2
+					has_ethic = "ethic_fanatic_spiritualist"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_psionic_theory"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_telepathy"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_precognition_interface"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_The_Holy_Crusade"
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_spiritualist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_materialist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_psionic_theory"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_telepathy"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_precognition_interface"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_holy = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_Hive" }
+	is_rare = yes
+	is_dangerous = yes
+	modifier = {
+		ship_evasion_mult = 0.1
+		weapon_explosive_weapon_fire_rate = 1.5
+		ship_armor_mult = 3
+		ship_hitpoints_mult = -0.25
+		ship_shield_hp_mult = 1.5
+		shipsize_corvette_construction_speed_mult = 5
+		shipsize_escort_construction_speed_mult = 5
+		pop_ethic_shift = -1
+	}
+		
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_materialist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_spiritualist"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_psionic_theory"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_telepathy"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_precognition_interface"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_ethic = "ethic_fanatic_spiritualist"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_materialist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_psionic_theory"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_telepathy"
+		}
+		modifier = {
+			factor = 5
+				has_technology = "tech_precognition_interface"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+
+# ##################
+# Elite military_theory No Fanatical
+# ##################
+
+tech_elite_space_pirates = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		ship_armor_mult = -0.35
+		ship_armor_add = 400
+		ship_shield_hp_mult = -0.65
+		ship_hitpoints_mult = 2
+		ship_evasion_mult = 0.33
+		tile_resource_food_mult = -0.25
+		tile_resource_energy_mult = -0.35
+		tile_resource_minerals_mult = -0.5
+		planet_sensor_range_mult = 0.5
+		country_border_mult = 0.95
+		ship_emergency_ftl_mult = -0.6
+		weapon_type_kinetic_weapon_fire_rate_mult = 2
+		weapon_type_energy_weapon_fire_rate_mult = -0.95
+		shipsize_corvette_construction_speed_mult = -0.2
+		shipsize_destroyer_construction_speed_mult = -0.2
+		shipsize_cruiser_construction_speed_mult = 0.1
+		shipsize_battleship_construction_speed_mult = 3
+		shipsize_escort_construction_speed_mult = -0.2
+		shipsize_facruiser_construction_speed_mult = -0.3
+		shipsize_battlecruiser_construction_speed_mult = 2
+		shipsize_light_carrier_construction_speed_mult = -0.1
+		shipsize_carrier_construction_speed_mult = 2
+		shipsize_dreadnought_construction_speed_mult = 2.5
+		shipsize_flagship_build_cost_mult = 0.5
+		shipsize_military_station_small_build_cost_mult = -0.95
+		shipsize_military_station_small_upkeep_mult = -0.95
+		shipsize_military_station_medium_build_cost_mult = -0.4
+		shipsize_military_station_medium_upkeep_mult = -0.4
+		shipsize_military_station_large_build_cost_mult = 1
+		shipsize_military_station_xlarge_build_cost_mult = 1
+	}
+	
+	weight_modifier = {
+		factor = 0.65
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Space_Pirates"
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_galactic_ambitions"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 50
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_Space_Pirates"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_traders_coalition"
+					}
+				}
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_galactic_ambitions"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 50
+			}
+		}
+	}
+}
+
+tech_elite_traders_coalition = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 2
+	category = { military_theory }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	modifier = {
+		ship_upkeep_mult = -5
+		shipsize_destroyer_upkeep_mult = 1
+		shipsize_cruiser_upkeep_mult = 4
+		shipsize_battleship_upkeep_mult = 5
+		shipsize_facruiser_upkeep_mult = 2
+		shipsize_battlecruiser_upkeep_mult = 5
+		shipsize_light_carrier_upkeep_mult = 5
+		shipsize_carrier_upkeep_mult = 5
+		shipsize_dreadnought_upkeep_mult = 5
+		shipsize_titan_upkeep_mult = 5
+		shipsize_leviathan_upkeep_mult = 5
+		shipsize_sun_crusher_upkeep_mult = 5
+		shipsize_avatar_upkeep_mult = 5
+		shipsize_erebus_upkeep_mult = 5
+		shipsize_flagship_upkeep_mult = 5
+		shipsize_spaceport_upkeep_mult = 5
+		shipsize_mining_station_upkeep_mult = 5
+		shipsize_research_station_upkeep_mult = 5
+		shipsize_science_upkeep_mult = 5
+		shipsize_constructor_upkeep_mult = 5
+		shipsize_colonizer_upkeep_mult = 5
+		shipsize_military_station_small_upkeep_mult = 5
+		shipsize_military_station_medium_upkeep_mult = 5
+		shipsize_military_station_large_upkeep_mult = 5
+		shipsize_terraform_station_upkeep_mult = 5
+		shipsize_outpost_station_upkeep_mult = 5
+		shipsize_wormhole_station_upkeep_mult = 5
+		shipsize_observation_station_upkeep_mult = 5
+		shipsize_corvette_build_cost_mult = 3
+		shipsize_destroyer_build_cost_mult = 2
+		shipsize_escort_build_cost_mult = 2
+		ship_armor_add = 10
+		ship_shield_hp_mult = -0.95
+		weapon_type_energy_weapon_fire_rate_mult = -1
+		ship_fire_rate_mult = -0.3
+		ship_weapon_damage = 0.75
+		ship_hitpoints_mult = -0.2
+		ship_evasion_mult = -0.25
+		navy_size_mult = 1
+		ship_speed_mult = 2
+		ship_emergency_ftl_mult = -0.3
+	}
+	
+	weight_modifier = {
+		factor = 0.65
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_traders_coalition"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_outreach"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_relations"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_supremacy"
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_xeno_diplomacy"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_traders_coalition"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_outreach"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_relations"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_supremacy"
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_xeno_diplomacy"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 20
+			}
+		}
+	}
+}
+
+tech_elite_megacorp_federation = {
+	cost = @tier3cost4
+	area = society
+	is_reverse_engineerable = no
+	tier = 4
+	category = { military_theory }
+	weight = @tier3weight3
+	prerequisites = { "tech_elite_traders_coalition" }
+	is_rare = yes
+	is_dangerous = yes
+	
+	modifier = {
+		shipsize_corvette_upkeep_mult = 5
+		shipsize_destroyer_upkeep_mult = 4
+		shipsize_cruiser_upkeep_mult = -4
+		shipsize_battleship_upkeep_mult = -4
+		shipsize_escort_upkeep_mult = 5
+		shipsize_facruiser_upkeep_mult = 3
+		shipsize_battlecruiser_upkeep_mult = -2
+		shipsize_carrier_upkeep_mult = -3
+		shipsize_dreadnought_upkeep_mult = -4
+		shipsize_corvette_build_cost_mult = -3
+		shipsize_destroyer_build_cost_mult = -2
+		shipsize_escort_build_cost_mult = -2
+		shipsize_cruiser_build_cost_mult = 2.5
+		shipsize_battleship_build_cost_mult = 2.5
+		shipsize_Dreadnought_build_cost_mult 2.5
+		shipsize_carrier_build_cost_mult = 2.5
+		shipsize_corvette_build_cost_mult = -0.5
+		shipsize_escort_build_cost_mult = -0.5
+		shipsize_destroyer_build_cost_mult = -0.5
+		ship_armor_add = 25
+		ship_shield_hp_mult = 0.65
+		weapon_type_energy_weapon_fire_rate_mult = 0.6
+		ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 1
+		ship_evasion_mult = 0.1
+		ship_hitpoints_mult = 0.5
+		navy_size_mult = 1
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_traders_coalition"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_outreach"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_relations"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_supremacy"
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_xeno_diplomacy"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 5
+				has_trait = "trait_Elite_Military_-_traders_coalition"
+		}
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_technology = "tech_elite_space_pirates"
+						has_technology = "tech_elite_sovereignty"
+						has_technology = "tech_elite_reapers"
+						has_technology = "tech_elite_free_nations"
+						has_technology = "tech_elite_masters"
+						has_technology = "tech_elite_heroes"
+						has_technology = "tech_elite_galactic"
+						has_technology = "tech_elite_collective"
+						has_technology = "tech_elite_holy"
+					}
+				}
+		}
+		modifier = {
+			factor = 5
+			is_ai = yes
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_outreach"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_relations"
+		}
+		modifier = {
+			factor = 3
+				has_technology = "tech_xeno_supremacy"
+		}
+		modifier = {
+			factor = 10
+				has_technology = "tech_xeno_diplomacy"
+		}
+		modifier = {
+			factor = 0
+			NOT = { 
+				years_passed > 70
+			}
+		}
+	}
+}
+
+#CounterBalance Tech For Rogue AI (Pirates/Fallen Empires/Crisis Events)
+
+tech_elite_Counterbalance = {
+	cost = @tier2cost2
+	area = society
+	is_reverse_engineerable = no
+	tier = 0
+	category = { military_theory }
+	weight = @tier3weight4
+	
+	modifier = {
+		navy_size_mult = 1
+		ship_armor_mult = -5.02
+		ship_armor_add = -460
+		ship_shield_hp_mult = -15.85
+		ship_hitpoints_mult = -7.59
+		ship_weapon_damage = -12.54
+		ship_fire_rate_mult = -9.24
+		ship_evasion_mult = -1.65
+		pop_happiness = 0.25
+		ship_upkeep_mult = -25.39
+		shipsize_corvette_build_cost_mult = -0.4
+		planet_ship_build_speed_mult = 0.25
+		ship_emergency_ftl_mult = 1.66
+		ship_fire_rate_mult = -0.2
+		ship_auto_repair_add = -0.735
+		planet_ship_build_speed_mult = 4.5
+		slave_production_output = 1
+		slave_food_output = 0.4
+		tile_resource_food_mult = 1
+		tile_resource_energy_mult = 1
+		tile_resource_minerals_mult = .5
+		pop_environment_tolerance = 0.9
+		ship_combat_speed_mult = -5
+		country_border_mult = -1.5
+		shipsize_corvette_construction_speed_mult = -12
+		shipsize_destroyer_construction_speed_mult = -12
+		shipsize_cruiser_construction_speed_mult = -12
+		shipsize_battleship_construction_speed_mult = -14
+		shipsize_battlecruiser_construction_speed_mult = -2
+		shipsize_military_station_small_build_cost_mult = 0.2
+		shipsize_military_station_small_upkeep_mult = 0.95
+		shipsize_military_station_medium_build_cost_mult = 0.2
+		shipsize_military_station_medium_upkeep_mult = 0.95
+		shipsize_military_station_large_build_cost_mult = 0.2
+		shipsize_military_station_large_upkeep_mult = 0.95
+		shipsize_military_station_xlarge_build_cost_mult = -0.6
+		shipclass_military_station_damage_mult = -4
+		shipclass_military_station_hit_points_mult = -7
+		weapon_type_energy_weapon_fire_rate_mult = -0.95
+		weapon_type_kinetic_weapon_fire_rate_mult = -1.25
+		#Traders Stuff
+		ship_upkeep_mult = 5
+		shipsize_military_station_small_upkeep_mult = -5
+		shipsize_military_station_medium_upkeep_mult = -5
+		shipsize_military_station_large_upkeep_mult = -5
+		shipsize_terraform_station_upkeep_mult = -5
+		shipsize_outpost_station_upkeep_mult = -5
+		shipsize_wormhole_station_upkeep_mult = -5
+		shipsize_observation_station_upkeep_mult = -5
+		shipsize_corvette_build_cost_mult = -3
+		shipsize_destroyer_build_cost_mult = -2
+		shipsize_escort_build_cost_mult = -2
+		ship_shield_hp_mult = 0.45
+		ship_fire_rate_mult = 0.3
+		ship_weapon_damage = -1.5
+		ship_evasion_mult = 0.25
+		navy_size_mult = -2
+		ship_speed_mult = -2
+		ship_emergency_ftl_mult = 0.6	
+		shipsize_dreadnought_upkeep_mult = -4
+		shipsize_corvette_build_cost_mult = -3
+		shipsize_destroyer_build_cost_mult = -2
+		shipsize_escort_build_cost_mult = -2
+		shipsize_cruiser_build_cost_mult = 2.5
+		shipsize_battleship_build_cost_mult = 2.5
+		shipsize_Dreadnought_build_cost_mult 2.5
+		shipsize_carrier_build_cost_mult = 2.5
+		shipsize_corvette_build_cost_mult = -0.5
+		shipsize_escort_build_cost_mult = -0.5
+		shipsize_destroyer_build_cost_mult = -0.5
+		ship_shield_hp_mult = 1
+		weapon_type_energy_weapon_fire_rate_mult = 0.8
+		weapon_type_kinetic_weapon_fire_rate_mult = -2.25
+		weapon_type_explosive_weapon_fire_rate_mult = -1.5
+		weapon_type_explosive_weapon_damage_mult = -1
+		weapon_type_kinetic_weapon_damage_mult = -1
+		weapon_type_energy_weapon_damage_mult = -0.5
+		ship_fire_rate_mult = 0.5
+		ship_weapon_damage = 2
+		ship_evasion_mult = 0.5
+		navy_size_mult = 1
+		shipsize_corvette_upkeep_mult = -7
+		shipsize_destroyer_upkeep_mult = -7
+		shipsize_cruiser_upkeep_mult = -2
+		shipsize_battleship_upkeep_mult = -3
+		shipsize_escort_upkeep_mult = -7
+		shipsize_light_carrier_upkeep_mult = -7
+		shipsize_flagship_upkeep_mult = -6
+		shipsize_facruiser_upkeep_mult = -7
+		shipsize_battlecruiser_upkeep_mult = -5
+		shipsize_carrier_upkeep_mult = -4
+		shipsize_dreadnought_upkeep_mult = 1
+		shipsize_titan_upkeep_mult = -6
+		shipsize_leviathan_upkeep_mult = -6
+		shipsize_sun_crusher_upkeep_mult = -6 
+		shipsize_avatar_upkeep_mult = -6 
+		shipsize_erebus_upkeep_mult = -6 
+		shipsize_mining_station_upkeep_mult = -5
+		shipsize_research_station_upkeep_mult = -5
+		shipsize_science_upkeep_mult = -5
+		shipsize_constructor_upkeep_mult = -5
+		shipsize_colonizer_upkeep_mult = -5
+		
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_ethic = ethic_militarist
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_individualist
+						has_ethic = ethic_materialist
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_collectivist
+						has_ethic = ethic_spiritualist
+						has_technology = "tech_elite_space_pirates"
+						
+					}
+				}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 0
+				AND = {
+					OR = {
+						has_ethic = ethic_fanatic_collectivist
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_individualist
+						has_technology = "tech_elite_Legion"
+						has_technology = "tech_elite_Purge"
+						has_technology = "tech_elite_Freelancers"
+						has_technology = "Tech_elite_Rifters"
+						has_technology = "tech_elite_Bastion"
+						has_technology = "tech_elite_Alliance"
+						has_technology = "tech_elite_Hive"
+						has_technology = "tech_elite_Crusaders"
+						has_ethic = ethic_militarist
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_individualist
+						has_ethic = ethic_materialist
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_collectivist
+						has_ethic = ethic_spiritualist
+						
+					}
+				}
+		}
+	}
+}

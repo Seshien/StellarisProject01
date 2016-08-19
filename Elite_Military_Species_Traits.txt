@@ -1,0 +1,83 @@
+##################
+# Elite Military Species Traits #
+##################
+
+
+trait_Elite_Military_-_Imperial_Legion = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	
+	modifier = {
+		
+		}
+}
+trait_Elite_Military_-_The_Great_Purge = {
+	cost = 2
+	opposites = {  "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	
+	modifier = {
+		
+		}
+}
+trait_Elite_Military_-_Freelancers = {
+	cost = 2
+	opposites = {  "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Imperial_Legion " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	slavery_trait = no
+	modifier = {
+	
+		}
+}
+trait_Elite_Military_-_Rift_Walkers = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	
+	modifier = {
+	
+		}
+}
+trait_Elite_Military_-_Empire's_Bastion = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	
+	modifier = {
+
+		}
+}
+trait_Elite_Military_-_The_Grand_Alliance = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	slavery_trait = no
+	modifier = {
+	
+		}
+}
+trait_Elite_Military_-_The_Hive = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_The_Holy_Crusade" "trait_Elite_Military_-_Space_Pirates"}	
+	slavery_trait = yes
+	modifier = {
+	
+		}
+}
+trait_Elite_Military_-_The_Holy_Crusade = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_Space_Pirates"}	
+	modifier = {
+	
+		
+		}
+}
+trait_Elite_Military_-_Space_Pirates = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_The_Holy_Crusade"}	
+	modifier = {
+	
+	}
+}
+trait_Elite_Military_-_Traders_Coalition = {
+	cost = 2
+	opposites = { "trait_Elite_Military_-_The_Great_Purge" "trait_Elite_Military_-_Freelancers " "trait_Elite_Military_-_Rift_Walkers" "trait_Elite_Military_-_Empire's_Bastion" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Grand_Alliance" "trait_Elite_Military_-_The_Hive" "trait_Elite_Military_-_Imperial_Legion" "trait_Elite_Military_-_The_Holy_Crusade"}	
+	modifier = {
+	
+	}
+}
